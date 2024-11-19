@@ -19,25 +19,43 @@
         android:background="@color/menu_backgorund"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:id="@+id/browser"
+        <LinearLayout
             android:layout_width="325dp"
-            android:layout_height="48dp"
-            android:backgroundTint="@color/et_backgorund"
-            android:background="@drawable/et_round"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="15dp"
-            android:hint="@string/bw_hint"
-            android:textColorHint="@color/text"
-            android:paddingLeft="15dp"
-            android:inputType="text"/>
+            android:backgroundTint="@color/et_backgorund"
+            android:background="@drawable/et_round">
+
+            <EditText
+                android:id="@+id/browser"
+                android:layout_width="275dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/et_backgorund"
+                android:hint="@string/bw_hint"
+                android:textColorHint="@color/text"
+                android:paddingStart="15dp"
+                android:paddingEnd="0dp"
+                android:inputType="text"/>
+
+            <ImageButton
+                android:id="@+id/search"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/search_content"
+                android:background="@drawable/search"/>
+
+        </LinearLayout>
 
         <ImageButton
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="17dp"
-            android:background="@drawable/menu_button"/>
+            android:layout_marginStart="10dp"
+            android:background="@drawable/menu_button"
+            android:contentDescription="@string/menu_content"/>
 
     </LinearLayout>
 
@@ -46,7 +64,7 @@
 
 
     <!-- Menu inferior (Fragment compartido por todos los layouts) -->
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:name="com.example.appcinema.menu_inf"

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AppCinema</string>
     <string name="bw_hint">Busca la pelicula por nombre</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="menu_content">TODO: menu button</string>
+    <string name="search_content">TODO: search button</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
