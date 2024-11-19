@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="menu_backgorund">#355DEF</color>
+    <color name="et_backgorund">#1134BC</color>
+    <color name="app_backgorund">#E2DCDC</color>
+    <color name="text">#C3C0C0</color>
 </resources>

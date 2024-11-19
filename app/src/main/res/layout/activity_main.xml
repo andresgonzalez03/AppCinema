@@ -5,15 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_backgorund"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <!-- Pantalla de inicio -->
+
+    <!-- Menu superior con entrada de texto -->
+    <LinearLayout
+        android:id="@+id/top_menu"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal"
+        android:background="@color/menu_backgorund"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/browser"
+            android:layout_width="325dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/et_backgorund"
+            android:background="@drawable/et_round"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:hint="@string/bw_hint"
+            android:textColorHint="@color/text"
+            android:paddingLeft="15dp"
+            android:inputType="text"/>
+
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="17dp"
+            android:background="@drawable/menu_button"/>
+
+    </LinearLayout>
+
+    <!-- Peliculas recomendadas por la app -->
+
+
+
+    <!-- Menu inferior (Fragment compartido por todos los layouts) -->
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:name="com.example.appcinema.menu_inf"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout="@layout/fragment_menu_inf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
