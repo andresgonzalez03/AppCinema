@@ -78,6 +78,6 @@
         android:name="com.example.appcinema.menu_inf"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout="@layout/fragment_menu_inf" />
+        tools:layout="@layout/fragment_menu_inf"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
