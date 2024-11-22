@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_backgorund"
+    android:background="@color/app_background"
     tools:context=".MainActivity">
 
     <!-- Pantalla de inicio -->
@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:orientation="horizontal"
-        android:background="@color/menu_backgorund"
+        android:background="@color/menu_background"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
@@ -24,14 +24,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/et_backgorund"
+            android:backgroundTint="@color/et_background"
             android:background="@drawable/et_round">
 
             <EditText
                 android:id="@+id/browser"
                 android:layout_width="275dp"
                 android:layout_height="48dp"
-                android:backgroundTint="@color/et_backgorund"
+                android:backgroundTint="@color/et_background"
                 android:hint="@string/bw_hint"
                 android:textColorHint="@color/text"
                 android:paddingStart="15dp"
@@ -80,6 +80,6 @@
         android:name="com.example.appcinema.menu_inf"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout="@layout/fragment_menu_inf" />
+        tools:layout="@layout/fragment_menu_inf"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
