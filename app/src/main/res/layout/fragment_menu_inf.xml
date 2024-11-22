@@ -9,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/app_backgorund"
+        android:background="@color/app_background"
         android:orientation="horizontal"
         android:layout_margin="15dp"
         android:gravity="center">
@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:text="@string/inf_fragment_text"
             android:textSize="20dp"
-            android:backgroundTint="@color/menu_backgorund"/>
+            android:backgroundTint="@color/menu_background"/>
 
     </LinearLayout>
 

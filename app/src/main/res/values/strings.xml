@@ -4,5 +4,6 @@
     <string name="menu_content">TODO: menu button</string>
     <string name="search_content">TODO: search button</string>
     <string name="inf_fragment_text">Continuar</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="movie_title">Título de la película</string>
+    <string name="poster_description">Poster de la película</string>
 </resources>
