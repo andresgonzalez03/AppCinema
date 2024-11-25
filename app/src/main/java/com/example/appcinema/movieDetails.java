@@ -62,15 +62,11 @@ public class movieDetails extends AppCompatActivity {
         scheduleList.add("03:00 PM");
         scheduleList.add("05:30 PM");
 
-        ScheduleAdapter adapter = new ScheduleAdapter(scheduleList, new ScheduleAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(String horari) {
+        ScheduleAdapter adapter = new ScheduleAdapter(scheduleList, (horari) -> {
                 Intent intent = new Intent(movieDetails.this, SeatSelection.class);
                 intent.putExtra("horari", horari);
                 startActivity(intent);
-            }
         });
-
         recyclerView.setAdapter(adapter);
     }
 }
