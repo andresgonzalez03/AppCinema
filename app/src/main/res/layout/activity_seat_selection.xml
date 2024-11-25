@@ -20,4 +20,291 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <GridLayout
+        app:layout_constraintTop_toBottomOf="@+id/selected_schedule"
+        android:id="@+id/seats_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:columnCount="7"
+        android:rowCount="5"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center">
+
+    <!-- Fila A (Número de fila 1) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/seat_1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        style="@style/CustomButtonStyle"/>
+
+    <Button
+        android:id="@+id/seat_2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_5"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <!-- Fila B (Número de fila 2) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/seat_7"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_8"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_9"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_10"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_11"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_12"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <!-- Fila C (Número de fila 3) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/seat_13"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_14"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_15"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_16"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_17"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_18"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <!-- Fila D (Número de fila 4) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/seat_19"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_20"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_21"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_22"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_23"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_24"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <!-- Fila E (Número de fila 5) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/seat_25"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_26"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_27"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_28"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_29"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+
+    <Button
+        android:id="@+id/seat_30"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="4dp"
+        android:background="@drawable/button_selector"/>
+    </GridLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/menu_inf"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:name="com.example.appcinema.menu_inf"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout="@layout/fragment_menu_inf"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
