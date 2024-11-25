@@ -11,8 +11,8 @@ import java.util.List;
 
 public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.ScheduleViewHolder> {
 
-    private List<String> scheduleList;
-    private OnItemClickListener listener;
+    private final List<String> scheduleList;
+    private  final OnItemClickListener listener;
 
     public interface OnItemClickListener {
         void onItemClick(String schedule);

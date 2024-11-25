@@ -14,8 +14,8 @@ import java.util.List;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MovieRecycler extends RecyclerView.Adapter<MovieRecycler.MovieViewHolder> {
-    private List<Movie> originalList;
-    private List<Movie> filteredList;
+    private final List<Movie> originalList;
+    private final List<Movie> filteredList;
 
     public MovieRecycler(List<Movie> originalList) {
         this.originalList = new ArrayList<>(originalList);

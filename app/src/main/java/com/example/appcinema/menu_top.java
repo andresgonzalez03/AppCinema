@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 /**
@@ -16,7 +15,7 @@ import android.widget.ImageButton;
  * create an instance of this fragment.
  */
 public class menu_top extends Fragment {
-    private ImageButton backButton;
+   ImageButton backButton;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -63,9 +62,7 @@ public class menu_top extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu_top, container, false);
         backButton = view.findViewById(R.id.backButton);
-        backButton.setOnClickListener(view1 -> {
-            requireActivity().finish();
-        });
+        backButton.setOnClickListener(view1 -> requireActivity().finish());
         return view;
     }
 }

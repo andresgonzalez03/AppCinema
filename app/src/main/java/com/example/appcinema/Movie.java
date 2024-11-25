@@ -1,12 +1,12 @@
 package com.example.appcinema;
 
 public class Movie {
-    private String titol;
-    private int imatge;
-    private String duration;
-    private String genre;
-    private String actors;
-    private String description;
+    private final String titol;
+    private final int imatge;
+    private final String duration;
+    private final String genre;
+    private final String actors;
+    private final String description;
 
     public Movie(String titol, int imatge, String duration, String genre, String actors, String description) {
         this.titol = titol;
