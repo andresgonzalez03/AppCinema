@@ -4,4 +4,7 @@
     <color name="et_background">#1134BC</color>
     <color name="app_background">#E2DCDC</color>
     <color name="text">#C3C0C0</color>
+    <color name="dark_grey">#A9A9A9</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

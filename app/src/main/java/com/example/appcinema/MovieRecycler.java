@@ -1,20 +1,25 @@
 package com.example.appcinema;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MovieRecycler extends RecyclerView.Adapter<MovieRecycler.MovieViewHolder> {
-    private List<Movie> movieList;
+    private List<Movie> originalList;
+    private List<Movie> filteredList;
 
-    public MovieRecycler(List<Movie> movieList) {
-        this.movieList = movieList;
+    public MovieRecycler(List<Movie> originalList) {
+        this.originalList = new ArrayList<>(originalList);
+        this.filteredList = new ArrayList<>(originalList);
     }
 
     @Override
@@ -25,22 +30,41 @@ public class MovieRecycler extends RecyclerView.Adapter<MovieRecycler.MovieViewH
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, int position) {
-        Movie movie = movieList.get(position);
-
+        Movie movie = filteredList.get(position);
         holder.title.setText(movie.getTitle());
 
-        // Cambiar el tamaño de la imagen programáticamente
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT, 1200);
         holder.imageView.setLayoutParams(layoutParams);
-
         holder.imageView.setImageResource(movie.getImageResource());
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), movieDetails.class);
+            intent.putExtra("title", movie.getTitle());
+            intent.putExtra("imageResource", movie.getImageResource());
+            intent.putExtra("duration", movie.getDuration());
+            intent.putExtra("genre", movie.getGenre());
+            intent.putExtra("actors", movie.getActors());
+            intent.putExtra("description", movie.getDescription());
+            v.getContext().startActivity(intent);
+        });
     }
-
-
     @Override
     public int getItemCount() {
-        return movieList.size();
+        return filteredList.size();
+    }
+
+    public void filter(String query) {
+        filteredList.clear();
+        if (query.isEmpty()) {
+            filteredList.addAll(originalList);
+        } else {
+            for (Movie movie : originalList) {
+                if (movie.getTitle().toLowerCase().contains(query.toLowerCase())) {
+                    filteredList.add(movie);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
