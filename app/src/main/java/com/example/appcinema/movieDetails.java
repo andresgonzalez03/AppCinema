@@ -2,8 +2,12 @@ package com.example.appcinema;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class movieDetails extends AppCompatActivity {
+    private String selectedHorario = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,30 +50,35 @@ public class movieDetails extends AppCompatActivity {
         actorsTextView.setText(actors);
         descriptionTextView.setText(description);
 
-
+        ViewGroup scheduleContainer = findViewById(R.id.linearSchedule);
+        for (int i = 0; i < scheduleContainer.getChildCount(); i++) {
+            View child = scheduleContainer.getChildAt(i);
+            if (child instanceof ToggleButton) {
+                ToggleButton scheduleButton = (ToggleButton) child;
+                scheduleButton.setOnClickListener(view -> {
+                    String selectedHour = scheduleButton.getTextOn().toString();
+                    selectHorario(selectedHour);
+                });
+            }
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+    public String getSelectedHorario() {return selectedHorario;}
 
-        RecyclerView recyclerView = findViewById(R.id.recycler_view_schedule);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerView.setNestedScrollingEnabled(false);
-        recyclerView.setFocusable(false);
-
-        List<String> scheduleList = new ArrayList<>();
-        scheduleList.add("13:00");
-        scheduleList.add("16:00");
-        scheduleList.add("19:00");
-        scheduleList.add("22:00");
-
-        ScheduleAdapter adapter = new ScheduleAdapter(scheduleList, (horari) -> {
-                Intent intent = new Intent(movieDetails.this, SeatSelection.class);
-                intent.putExtra("horari", horari);
-                startActivity(intent);
-        });
-        recyclerView.setAdapter(adapter);
+    private void selectHorario(String horario) {
+        if (selectedHorario != null && selectedHorario.equals(horario)) {
+            selectedHorario = null;
+        } else {
+            selectedHorario = horario;
+        }
+        menu_inf fragment = (menu_inf) getSupportFragmentManager().findFragmentById(R.id.menu_inf);
+        if (fragment != null) {
+            fragment.updateHorarioSelectionStatus(selectedHorario != null);
+        }
     }
 }

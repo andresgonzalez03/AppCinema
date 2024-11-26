@@ -15,17 +15,17 @@
         android:id="@+id/top_menu"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:orientation="horizontal"
         android:background="@color/menu_background"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:layout_gravity="center"
-            android:backgroundTint="@color/et_background"
-            android:background="@drawable/et_round">
+            android:layout_marginStart="20dp"
+            android:background="@drawable/et_round"
+            android:backgroundTint="@color/et_background">
 
             <EditText
                 android:id="@+id/browser"
@@ -33,19 +33,19 @@
                 android:layout_height="48dp"
                 android:backgroundTint="@color/et_background"
                 android:hint="@string/bw_hint"
-                android:textColorHint="@color/text"
+                android:inputType="text"
                 android:paddingStart="15dp"
                 android:paddingEnd="0dp"
-                android:inputType="text"/>
+                android:textColorHint="@color/text" />
 
             <ImageButton
                 android:id="@+id/search"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="10dp"
                 android:layout_gravity="center"
-                android:contentDescription="@string/search_content"
-                android:background="@drawable/search"/>
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/search"
+                android:contentDescription="@string/search_content" />
 
         </LinearLayout>
 
@@ -55,7 +55,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:background="@drawable/menu_button"
-            android:contentDescription="@string/menu_content"/>
+            android:contentDescription="@string/menu_content" />
 
     </LinearLayout>
 
@@ -65,19 +65,19 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/top_menu"
         app:layout_constraintBottom_toTopOf="@id/menu_inf"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/top_menu" />
 
     <!-- Menu inferior (Fragment compartido por todos los layouts) -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/menu_inf"
+        android:name="com.example.appcinema.menu_inf"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:name="com.example.appcinema.menu_inf"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout="@layout/fragment_menu_inf"/>
+        tools:layout="@layout/fragment_menu_inf" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

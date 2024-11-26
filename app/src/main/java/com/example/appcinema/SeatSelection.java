@@ -1,17 +1,12 @@
 package com.example.appcinema;
 
-import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -22,8 +17,7 @@ import java.util.List;
 
 public class SeatSelection extends AppCompatActivity {
     private menu_inf fragmentMenu;
-    String selectedSeat = null;
-    private List<String> selectedSeats = new ArrayList<>();
+    private final List<String> selectedSeats = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

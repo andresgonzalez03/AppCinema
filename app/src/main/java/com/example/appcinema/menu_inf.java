@@ -21,6 +21,8 @@ import java.util.ArrayList;
 public class menu_inf extends Fragment {
     private boolean seatSelected = false;
     private boolean buttonEnabled = true;
+    private boolean horarioSelected = false;
+    private Button continueButton;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,14 +64,13 @@ public class menu_inf extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (getActivity() instanceof SeatSelection && getView() != null) {
+        if (getView() != null) {
             Button continueButton = getView().findViewById(R.id.buttonContinuar);
             if (continueButton != null) {
                 continueButton.setEnabled(false);
             }
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -78,15 +79,15 @@ public class menu_inf extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        if(getActivity() instanceof SeatSelection) {
-            Button continueButton = view.findViewById(R.id.buttonContinuar);
-
-            // Configuramos el botón para que se active solo cuando seatSelected sea true
-            continueButton.setEnabled(buttonEnabled && seatSelected);
-
-            continueButton.setOnClickListener(view1 -> {
-                navigateToNextActivity();
-            });
+        continueButton = view.findViewById(R.id.buttonContinuar);
+        if (continueButton != null) {
+            if (getActivity() instanceof SeatSelection) {
+                continueButton.setEnabled(seatSelected);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            } else if (getActivity() instanceof movieDetails) {
+                continueButton.setEnabled(horarioSelected);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            }
         }
     }
 
@@ -111,11 +112,18 @@ public class menu_inf extends Fragment {
     }
 
     private void navigateToNextActivity() {
-        if (seatSelected && getActivity() != null) {
+        if (getActivity() instanceof SeatSelection && seatSelected) {
             SeatSelection activity = (SeatSelection) getActivity();
             if (activity != null && !activity.getSelectedSeats().isEmpty()) {
                 Intent intent = new Intent(getActivity(), TicketSelection.class);
                 intent.putStringArrayListExtra("seats", new ArrayList<>(activity.getSelectedSeats()));
+                startActivity(intent);
+            }
+        } else if (getActivity() instanceof movieDetails && horarioSelected) {
+            movieDetails activity = (movieDetails) getActivity();
+            if (activity != null && activity.getSelectedHorario() != null) {
+                Intent intent = new Intent(getActivity(), SeatSelection.class);
+                intent.putExtra("horari", activity.getSelectedHorario());
                 startActivity(intent);
             }
         }
@@ -123,6 +131,7 @@ public class menu_inf extends Fragment {
     public void resetButton() {
         seatSelected = false;
         buttonEnabled = false;
+        horarioSelected = false;
         if(getView() != null) {
             Button continueButton = getView().findViewById(R.id.buttonContinuar);
             if(continueButton != null) {
@@ -130,4 +139,13 @@ public class menu_inf extends Fragment {
             }
         }
     }
+
+    public void updateHorarioSelectionStatus(boolean isSelected) {
+        horarioSelected = isSelected;  // Guardamos el estado de la selección del horario
+        Button continueButton = getView().findViewById(R.id.buttonContinuar);
+        if (continueButton != null) {
+            continueButton.setEnabled(isSelected);  // Habilitar o deshabilitar el botón
+        }
+    }
+
 }
