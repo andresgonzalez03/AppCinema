@@ -41,271 +41,360 @@
         android:layout_marginBottom="32dp"
         android:gravity="center">
 
-    <!-- Fila A (Número de fila 1) -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1"
-        android:layout_margin="8dp"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:background="@android:color/darker_gray"/>
+        <!-- Fila A (Número de fila 1) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A"
+            android:layout_margin="8dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:background="@android:color/darker_gray"/>
 
-    <Button
-        android:id="@+id/seat_1"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        style="@style/CustomButtonStyle"/>
+        <ToggleButton
+            android:id="@+id/seat_1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="A1"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="A2"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="A3"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="A4"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_5"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="A5"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_6"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="A6"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
     <!-- Fila B (Número de fila 2) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2"
+        android:text="B"
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:background="@android:color/darker_gray"/>
 
-    <Button
-        android:id="@+id/seat_7"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="B1"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_8"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="B2"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_9"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_9"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="B3"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_10"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_10"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:contentDescription="B4"
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_11"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_11"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:contentDescription="B5"
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_12"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_12"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:contentDescription="B6"
+            android:textOff=""/>
 
     <!-- Fila C (Número de fila 3) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
+        android:text="C"
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:background="@android:color/darker_gray"/>
 
-    <Button
-        android:id="@+id/seat_13"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_13"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="C1"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_14"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_14"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="C2"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_15"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_15"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="C3"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_16"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_16"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="C4"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_17"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_17"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="C5"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_18"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_18"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="C6"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
     <!-- Fila D (Número de fila 4) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4"
+        android:text="D"
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:background="@android:color/darker_gray"/>
 
-    <Button
-        android:id="@+id/seat_19"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_19"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="D1"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_20"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_20"
+            android:layout_width="50dp"
+            android:contentDescription="D2"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_21"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_21"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="D3"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_22"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_22"
+            android:layout_width="50dp"
+            android:contentDescription="D4"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_23"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_23"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="D5"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_24"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_24"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="D6"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
     <!-- Fila E (Número de fila 5) -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5"
+        android:text="E"
         android:layout_margin="8dp"
         android:gravity="center"
         android:textSize="18sp"
         android:textColor="@android:color/black"
         android:background="@android:color/darker_gray"/>
 
-    <Button
-        android:id="@+id/seat_25"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_25"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="E1"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_26"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_26"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="E2"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_27"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_27"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="E3"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_28"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_28"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="E4"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_29"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"/>
+        <ToggleButton
+            android:id="@+id/seat_29"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="E5"
+            android:layout_margin="4dp"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
 
-    <Button
-        android:id="@+id/seat_30"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/button_selector"
-        android:checkable="true"/>
+        <ToggleButton
+            android:id="@+id/seat_30"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="4dp"
+            android:contentDescription="E6"
+            android:background="@drawable/button_selector"
+            android:textOn=""
+            android:textOff=""/>
     </GridLayout>
 
     <androidx.fragment.app.FragmentContainerView

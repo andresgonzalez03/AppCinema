@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link menu_inf#newInstance} factory method to
@@ -111,9 +113,9 @@ public class menu_inf extends Fragment {
     private void navigateToNextActivity() {
         if (seatSelected && getActivity() != null) {
             SeatSelection activity = (SeatSelection) getActivity();
-            if (activity != null && activity.selectedSeat != null) {
+            if (activity != null && !activity.getSelectedSeats().isEmpty()) {
                 Intent intent = new Intent(getActivity(), TicketSelection.class);
-                intent.putExtra("seat", activity.selectedSeat);
+                intent.putStringArrayListExtra("seats", new ArrayList<>(activity.getSelectedSeats()));
                 startActivity(intent);
             }
         }

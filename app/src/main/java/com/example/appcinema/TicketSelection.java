@@ -11,6 +11,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class TicketSelection extends AppCompatActivity {
 
     @Override
@@ -19,12 +21,12 @@ public class TicketSelection extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_ticket_selection);
 
-        String selectedSeat = getIntent().getStringExtra("seat");
+        ArrayList<String> selectedSeats = getIntent().getStringArrayListExtra("seats");
         TextView seatTextView = findViewById(R.id.selected_seat);
-        if (selectedSeat != null) {
-            seatTextView.setText("Asiento seleccionado: " + selectedSeat);
+        if (selectedSeats == null || selectedSeats.isEmpty()) {
+            seatTextView.setText("No se seleccionaron asientos.");
         } else {
-            seatTextView.setText("No se seleccionó ningún asiento.");
+            seatTextView.setText("Asientos seleccionados: " + String.join(", ", selectedSeats));
         }
 
         Button normalButton = findViewById(R.id.button_normal);
@@ -41,9 +43,5 @@ public class TicketSelection extends AppCompatActivity {
     }
     private void ticketTypeSelected(String ticketType) {
         Toast.makeText(this, "Tipo de entrada seleccionado: " + ticketType, Toast.LENGTH_SHORT).show();
-
-        // Pasar a la siguiente actividad o realizar otra acción, como confirmar la compra
-        // Intent intent = new Intent(TicketTypeSelection.this, ConfirmActivity.class);
-        // startActivity(intent);
     }
 }
