@@ -15,15 +15,14 @@
         android:id="@+id/top_menu"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:background="@color/menu_background"
+        android:background="@color/app_background"
         android:orientation="horizontal"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
             android:background="@drawable/et_round"
             android:backgroundTint="@color/et_background">
 
@@ -34,6 +33,7 @@
                 android:backgroundTint="@color/et_background"
                 android:hint="@string/bw_hint"
                 android:inputType="text"
+                android:textStyle="bold"
                 android:paddingStart="15dp"
                 android:paddingEnd="0dp"
                 android:textColorHint="@color/text" />
@@ -48,15 +48,6 @@
                 android:contentDescription="@string/search_content" />
 
         </LinearLayout>
-
-        <ImageButton
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/menu_button"
-            android:contentDescription="@string/menu_content" />
-
     </LinearLayout>
 
     <!-- Peliculas recomendadas por la app -->

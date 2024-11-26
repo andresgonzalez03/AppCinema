@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="menu_background">#355DEF</color>
-    <color name="et_background">#1134BC</color>
+    <color name="et_background">#929090</color>
     <color name="app_background">#E2DCDC</color>
     <color name="text">#C3C0C0</color>
     <color name="dark_grey">#A9A9A9</color>
