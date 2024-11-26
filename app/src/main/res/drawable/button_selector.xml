@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Color cuando está seleccionado -->
     <item android:drawable="@drawable/button_selected" android:state_selected="true"/>
-    <!-- Color cuando no está seleccionado -->
-    <item android:drawable="@drawable/button_default" android:state_selected="false"/>
+    <item android:state_pressed="true" android:drawable="@color/black"/>
+    <item android:drawable="@drawable/button_default"/>
 </selector>

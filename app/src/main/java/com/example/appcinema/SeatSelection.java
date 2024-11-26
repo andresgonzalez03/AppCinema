@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 public class SeatSelection extends AppCompatActivity {
     private menu_inf fragmentMenu;
@@ -112,11 +113,10 @@ public class SeatSelection extends AppCompatActivity {
     }
 
     private void seatSelected(Button seat, String seatIdentifier) {
-        if (!seat.isSelected()) {
-            seat.setSelected(true);
+        seat.setSelected(!seat.isSelected());
+        if (seat.isSelected()) {
             selectedSeat = seatIdentifier;
         } else {
-            seat.setSelected(false);
             selectedSeat = null;
         }
         boolean seatSelected = checkAnySeatSelected();
@@ -144,4 +144,13 @@ public class SeatSelection extends AppCompatActivity {
         }
         return false;
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.menu_inf);
+        if (currentFragment instanceof menu_inf) {
+            ((menu_inf) currentFragment).resetButton();
+        }
+    }
+
 }

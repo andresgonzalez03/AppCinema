@@ -58,6 +58,17 @@ public class menu_inf extends Fragment {
         }
     }
     @Override
+    public void onResume() {
+        super.onResume();
+        if (getActivity() instanceof SeatSelection && getView() != null) {
+            Button continueButton = getView().findViewById(R.id.buttonContinuar);
+            if (continueButton != null) {
+                continueButton.setEnabled(false);
+            }
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_menu_inf, container, false);
@@ -65,16 +76,16 @@ public class menu_inf extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if(getActivity() instanceof SeatSelection) {
+            Button continueButton = view.findViewById(R.id.buttonContinuar);
 
-        Button continueButton = view.findViewById(R.id.buttonContinuar);
+            // Configuramos el botón para que se active solo cuando seatSelected sea true
+            continueButton.setEnabled(buttonEnabled && seatSelected);
 
-        // Configuramos el botón para que se active solo cuando seatSelected sea true
-        continueButton.setEnabled(buttonEnabled && seatSelected);
-
-        continueButton.setOnClickListener(view1 -> {
-            Log.d("menu_inf", "Botón presionado. seatSelected: " + seatSelected);
-            navigateToNextActivity();
-        });
+            continueButton.setOnClickListener(view1 -> {
+                navigateToNextActivity();
+            });
+        }
     }
 
     public void updateSeatSelectionStatus(boolean isSelected) {
@@ -104,6 +115,16 @@ public class menu_inf extends Fragment {
                 Intent intent = new Intent(getActivity(), TicketSelection.class);
                 intent.putExtra("seat", activity.selectedSeat);
                 startActivity(intent);
+            }
+        }
+    }
+    public void resetButton() {
+        seatSelected = false;
+        buttonEnabled = false;
+        if(getView() != null) {
+            Button continueButton = getView().findViewById(R.id.buttonContinuar);
+            if(continueButton != null) {
+                continueButton.setEnabled(false);
             }
         }
     }

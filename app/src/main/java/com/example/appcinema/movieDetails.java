@@ -54,13 +54,15 @@ public class movieDetails extends AppCompatActivity {
         });
 
         RecyclerView recyclerView = findViewById(R.id.recycler_view_schedule);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        recyclerView.setNestedScrollingEnabled(false);
+        recyclerView.setFocusable(false);
 
         List<String> scheduleList = new ArrayList<>();
-        scheduleList.add("10:00 AM");
-        scheduleList.add("12:30 PM");
-        scheduleList.add("03:00 PM");
-        scheduleList.add("05:30 PM");
+        scheduleList.add("13:00");
+        scheduleList.add("16:00");
+        scheduleList.add("19:00");
+        scheduleList.add("22:00");
 
         ScheduleAdapter adapter = new ScheduleAdapter(scheduleList, (horari) -> {
                 Intent intent = new Intent(movieDetails.this, SeatSelection.class);
