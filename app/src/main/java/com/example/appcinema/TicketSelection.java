@@ -18,6 +18,7 @@ public class TicketSelection extends AppCompatActivity {
     private menu_inf fragmentMenu;
     private String entrada;
     private int nEntradas;
+    ArrayList<String> selectedSeats;
     private String title;
     private int imageResource;
 
@@ -29,7 +30,7 @@ public class TicketSelection extends AppCompatActivity {
 
         title = getIntent().getStringExtra("title");
         imageResource = getIntent().getIntExtra("image", 0);
-        ArrayList<String> selectedSeats = getIntent().getStringArrayListExtra("seats");
+        selectedSeats = getIntent().getStringArrayListExtra("seats");
         nEntradas = selectedSeats.size();
         TextView seatTextView = findViewById(R.id.selected_seat);
         if (selectedSeats == null || selectedSeats.isEmpty()) {
@@ -71,6 +72,7 @@ public class TicketSelection extends AppCompatActivity {
 
     public String getEntrada() {return entrada;}
     public int getNEntradas() {return nEntradas;}
+    public ArrayList<String> getSelectedSeats() {return  selectedSeats;}
     public String getMovieTitle() {return title;}
     public int getMovieImg() {return imageResource;}
 }

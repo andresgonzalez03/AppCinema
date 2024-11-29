@@ -23,6 +23,7 @@ public class menu_inf extends Fragment {
     private boolean buttonEnabled = true;
     private boolean horarioSelected = false;
     private boolean entradaSelected = false;
+    private boolean entradaValida = false;
     private Button continueButton;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -88,6 +89,12 @@ public class menu_inf extends Fragment {
             } else if (getActivity() instanceof movieDetails) {
                 continueButton.setEnabled(horarioSelected);
                 continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            } else if (getActivity() instanceof TicketSelection) {
+                continueButton.setEnabled(entradaSelected);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            } else if (getActivity() instanceof ViewDetailsCompra) {
+                continueButton.setEnabled(entradaValida);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
             }
         }
     }
@@ -113,7 +120,6 @@ public class menu_inf extends Fragment {
     }
 
     private void navigateToNextActivity() {
-        Log.d(this.getClass().getName(), "Continuar pulsado");
         if (getActivity() instanceof SeatSelection && seatSelected) {
             SeatSelection activity = (SeatSelection) getActivity();
             if (activity != null && !activity.getSelectedSeats().isEmpty()) {
@@ -133,15 +139,23 @@ public class menu_inf extends Fragment {
                 startActivity(intent);
             }
         } else if (getActivity() instanceof TicketSelection && entradaSelected) {
-            Log.d(this.getClass().getName(), "Primer if");
             TicketSelection activity = (TicketSelection) getActivity();
             if (activity != null && activity.getEntrada() != null) {
-                Log.d(this.getClass().getName(), "Segundo if");
                 Intent intent = new Intent(getActivity(), ViewDetailsCompra.class);
                 intent.putExtra("entrada", activity.getEntrada());
                 intent.putExtra("nEntradas", activity.getNEntradas());
+                intent.putExtra("seats", activity.getSelectedSeats());
                 intent.putExtra("title", activity.getMovieTitle());
                 intent.putExtra("image", activity.getMovieImg());
+                startActivity(intent);
+            }
+        } else if (getActivity() instanceof ViewDetailsCompra && entradaValida) {;
+            ViewDetailsCompra activity = (ViewDetailsCompra) getActivity();
+            if (activity != null) {
+                Intent intent = new Intent(getActivity(), CompraEntradas.class);
+                intent.putExtra("precio", activity.getPrecioTotal());
+                intent.putExtra("title", activity.getMovieTitle());
+                intent.putExtra("image", activity.getMovieImage());
                 startActivity(intent);
             }
         }
@@ -169,6 +183,14 @@ public class menu_inf extends Fragment {
 
     public void updateEntradaSelectionStatus(boolean isSelected) {
         entradaSelected = isSelected;
+        Button continueButton = getView().findViewById(R.id.buttonContinuar);
+        if (continueButton != null) {
+            continueButton.setEnabled(isSelected);  // Habilitar o deshabilitar el botón
+        }
+    }
+
+    public void updateButtonStatus(boolean isSelected) {
+        entradaValida = isSelected;
         Button continueButton = getView().findViewById(R.id.buttonContinuar);
         if (continueButton != null) {
             continueButton.setEnabled(isSelected);  // Habilitar o deshabilitar el botón
