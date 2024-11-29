@@ -22,6 +22,8 @@ import java.util.List;
 
 public class movieDetails extends AppCompatActivity {
     private String selectedHorario = null;
+    private String title;
+    private int imageResource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +31,8 @@ public class movieDetails extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_movie_details);
 
-        String title = getIntent().getStringExtra("title");
-        int imageResource = getIntent().getIntExtra("imageResource", 0);
+        title = getIntent().getStringExtra("title");
+        imageResource = getIntent().getIntExtra("imageResource", 0);
         String duration = getIntent().getStringExtra("duration");
         String genre = getIntent().getStringExtra("genre");
         String actors = getIntent().getStringExtra("actors");
@@ -69,6 +71,8 @@ public class movieDetails extends AppCompatActivity {
         });
     }
     public String getSelectedHorario() {return selectedHorario;}
+    public String getMovieTitle() {return title;}
+    public int getMovieImg() {return imageResource;}
 
     private void selectHorario(String horario) {
         if (selectedHorario != null && selectedHorario.equals(horario)) {

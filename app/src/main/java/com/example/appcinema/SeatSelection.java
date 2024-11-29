@@ -18,6 +18,8 @@ import java.util.List;
 public class SeatSelection extends AppCompatActivity {
     private menu_inf fragmentMenu;
     private final List<String> selectedSeats = new ArrayList<>();
+    private String title;
+    private int imageResource;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,8 @@ public class SeatSelection extends AppCompatActivity {
         setContentView(R.layout.activity_seat_selection);
 
         String horariSeleccionat = getIntent().getStringExtra("horari");
+        title = getIntent().getStringExtra("title");
+        imageResource = getIntent().getIntExtra("image", 0);
         TextView scheduleTextView = findViewById(R.id.selected_schedule);
         scheduleTextView.setText("Horario: " + horariSeleccionat);
         fragmentMenu = (menu_inf) getSupportFragmentManager().findFragmentById(R.id.menu_inf);
@@ -53,6 +57,8 @@ public class SeatSelection extends AppCompatActivity {
     public List<String> getSelectedSeats() {
         return selectedSeats;
     }
+    public String getMovieTitle() {return title;}
+    public int getMovieImg() {return imageResource;}
 
     private void seatSelected(ToggleButton seat, String seatIdentifier) {
         seat.setSelected(!seat.isSelected());

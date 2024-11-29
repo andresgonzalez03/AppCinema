@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +17,7 @@ import android.widget.ImageButton;
  */
 public class menu_top extends Fragment {
    ImageButton backButton;
+   TextView title;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,7 +64,20 @@ public class menu_top extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_menu_top, container, false);
         backButton = view.findViewById(R.id.backButton);
+        title = view.findViewById(R.id.title);
+        // modificamos el texto segun al activity
+        selectAcitivtyTitle();
+
         backButton.setOnClickListener(view1 -> requireActivity().finish());
         return view;
+    }
+
+    private void selectAcitivtyTitle() {
+        if(getActivity() instanceof movieDetails) title.setText("PELICULA");
+        if(getActivity() instanceof SeatSelection) title.setText("ASIENTOS");
+        if(getActivity() instanceof TicketSelection) title.setText("ENTRADAS");
+        if(getActivity() instanceof ViewDetailsCompra) title.setText("DETALLES");
+        if(getActivity() instanceof CompraEntradas) title.setText("COMPRA");
+        if(getActivity() instanceof CompraConfirmada) title.setText("CONFIRMACION");
     }
 }

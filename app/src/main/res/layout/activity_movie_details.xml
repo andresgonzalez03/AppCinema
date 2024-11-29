@@ -109,6 +109,8 @@
                     android:id="@+id/btn_horario_1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
                     android:background="@drawable/horari_selector"
                     android:textOff="13:00"
                     android:textOn="13:00" />
@@ -117,6 +119,8 @@
                     android:id="@+id/btn_horario_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
                     android:background="@drawable/horari_selector"
                     android:textOff="16:00"
                     android:textOn="16:00" />
@@ -125,6 +129,8 @@
                     android:id="@+id/btn_horario_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"
                     android:background="@drawable/horari_selector"
                     android:textOff="19:00"
                     android:textOn="19:00" />
@@ -133,6 +139,7 @@
                     android:id="@+id/btn_horario_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:background="@drawable/horari_selector"
                     android:textOff="22:00"
                     android:textOn="22:00" />

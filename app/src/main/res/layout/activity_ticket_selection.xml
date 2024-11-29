@@ -29,23 +29,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menuTop" />
 
-    <Button
+    <ToggleButton
         android:id="@+id/button_normal"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
-        android:text="Entrada Normal"
+        android:textOff="Entrada Normal"
+        android:textOn="Entrada Normal"
+        android:background="@drawable/horari_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/selected_seat" />
 
-    <Button
+    <ToggleButton
         android:id="@+id/button_vip"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:text="Entrada VIP"
+        android:textOff="Entrada VIP"
+        android:textOn="Entrada VIP"
+        android:background="@drawable/horari_selector"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_normal" />
 
