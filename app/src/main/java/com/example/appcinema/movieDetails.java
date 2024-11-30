@@ -59,7 +59,7 @@ public class movieDetails extends AppCompatActivity {
                 ToggleButton scheduleButton = (ToggleButton) child;
                 scheduleButton.setOnClickListener(view -> {
                     String selectedHour = scheduleButton.getTextOn().toString();
-                    selectHorario(selectedHour);
+                    selectHorario(selectedHour,scheduleButton);
                 });
             }
         }
@@ -74,11 +74,23 @@ public class movieDetails extends AppCompatActivity {
     public String getMovieTitle() {return title;}
     public int getMovieImg() {return imageResource;}
 
-    private void selectHorario(String horario) {
+    private void selectHorario(String horario, ToggleButton selectedButton) {
         if (selectedHorario != null && selectedHorario.equals(horario)) {
             selectedHorario = null;
+            selectedButton.setChecked(false);
         } else {
             selectedHorario = horario;
+            ViewGroup scheduleContainer = findViewById(R.id.linearSchedule);
+            for (int i = 0; i < scheduleContainer.getChildCount(); i++) {
+                View child = scheduleContainer.getChildAt(i);
+                if (child instanceof ToggleButton) {
+                    ToggleButton toggleButton = (ToggleButton) child;
+                    if (!toggleButton.equals(selectedButton)) {
+                        toggleButton.setChecked(false);
+                    }
+                }
+            }
+            selectedButton.setChecked(true);
         }
         menu_inf fragment = (menu_inf) getSupportFragmentManager().findFragmentById(R.id.menu_inf);
         if (fragment != null) {

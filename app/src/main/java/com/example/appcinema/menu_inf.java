@@ -23,7 +23,6 @@ public class menu_inf extends Fragment {
     private boolean buttonEnabled = true;
     private boolean horarioSelected = false;
     private boolean entradaSelected = false;
-    private boolean entradaValida = false;
     private Button continueButton;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -68,8 +67,12 @@ public class menu_inf extends Fragment {
         super.onResume();
         if (getView() != null) {
             Button continueButton = getView().findViewById(R.id.buttonContinuar);
-            if (continueButton != null) {
+            if (getActivity() instanceof ViewDetailsCompra ) {
+                continueButton.setEnabled(true);
+            } else if (getActivity() instanceof TicketSelection || getActivity() instanceof SeatSelection || getActivity() instanceof movieDetails || getActivity() instanceof PagoTarjeta) {
                 continueButton.setEnabled(false);
+            } else {
+                continueButton.setEnabled(true);
             }
         }
     }
@@ -83,7 +86,15 @@ public class menu_inf extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         continueButton = view.findViewById(R.id.buttonContinuar);
         if (continueButton != null) {
-            if (getActivity() instanceof SeatSelection) {
+            if(getActivity() instanceof ViewDetailsCompra) {
+                continueButton.setEnabled(true);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            } else if(getActivity() instanceof CompraEntradas) {
+                continueButton.setEnabled(true);
+                continueButton.setText(R.string.boto_register);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            }
+            else if (getActivity() instanceof SeatSelection) {
                 continueButton.setEnabled(seatSelected);
                 continueButton.setOnClickListener(view1 -> navigateToNextActivity());
             } else if (getActivity() instanceof movieDetails) {
@@ -92,9 +103,19 @@ public class menu_inf extends Fragment {
             } else if (getActivity() instanceof TicketSelection) {
                 continueButton.setEnabled(entradaSelected);
                 continueButton.setOnClickListener(view1 -> navigateToNextActivity());
-            } else if (getActivity() instanceof ViewDetailsCompra) {
-                continueButton.setEnabled(entradaValida);
-                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
+            } else if (getActivity() instanceof PagoTarjeta) {
+                continueButton.setEnabled(false);
+                continueButton.setText("Pagar");
+                continueButton.setOnClickListener(view1 -> {
+                    PagoTarjeta pagoTarjetaActivity = (PagoTarjeta) getActivity();
+                    if (pagoTarjetaActivity != null) {
+                        pagoTarjetaActivity.realizarPago();
+                        Intent intent = new Intent(getActivity(), CompraConfirmada.class);
+                        startActivity(intent);
+                        getActivity().finish();
+
+                    }
+                });
             }
         }
     }
@@ -114,11 +135,9 @@ public class menu_inf extends Fragment {
             Button continueButton = getView().findViewById(R.id.buttonContinuar);
             if (continueButton != null) {
                 continueButton.setEnabled(isEnabled);
-
             }
         }
     }
-
     private void navigateToNextActivity() {
         if (getActivity() instanceof SeatSelection && seatSelected) {
             SeatSelection activity = (SeatSelection) getActivity();
@@ -149,7 +168,7 @@ public class menu_inf extends Fragment {
                 intent.putExtra("image", activity.getMovieImg());
                 startActivity(intent);
             }
-        } else if (getActivity() instanceof ViewDetailsCompra && entradaValida) {;
+        } else if (getActivity() instanceof ViewDetailsCompra) {
             ViewDetailsCompra activity = (ViewDetailsCompra) getActivity();
             if (activity != null) {
                 Intent intent = new Intent(getActivity(), CompraEntradas.class);
@@ -158,6 +177,13 @@ public class menu_inf extends Fragment {
                 intent.putExtra("image", activity.getMovieImage());
                 startActivity(intent);
             }
+        } else if (getActivity() instanceof CompraEntradas) {
+            CompraEntradas activity = (CompraEntradas) getActivity();
+            Intent intent = new Intent(getActivity(), PagoTarjeta.class);
+            intent.putExtra("precio", activity.getPrecioTotal());
+            intent.putExtra("title", activity.getMovieTitle());
+            intent.putExtra("image", activity.getMovieImage());
+            startActivity(intent);
         }
     }
     public void resetButton() {
@@ -174,10 +200,10 @@ public class menu_inf extends Fragment {
     }
 
     public void updateHorarioSelectionStatus(boolean isSelected) {
-        horarioSelected = isSelected;  // Guardamos el estado de la selección del horario
+        horarioSelected = isSelected;
         Button continueButton = getView().findViewById(R.id.buttonContinuar);
         if (continueButton != null) {
-            continueButton.setEnabled(isSelected);  // Habilitar o deshabilitar el botón
+            continueButton.setEnabled(isSelected);
         }
     }
 
@@ -185,16 +211,7 @@ public class menu_inf extends Fragment {
         entradaSelected = isSelected;
         Button continueButton = getView().findViewById(R.id.buttonContinuar);
         if (continueButton != null) {
-            continueButton.setEnabled(isSelected);  // Habilitar o deshabilitar el botón
+            continueButton.setEnabled(isSelected);
         }
     }
-
-    public void updateButtonStatus(boolean isSelected) {
-        entradaValida = isSelected;
-        Button continueButton = getView().findViewById(R.id.buttonContinuar);
-        if (continueButton != null) {
-            continueButton.setEnabled(isSelected);  // Habilitar o deshabilitar el botón
-        }
-    }
-
 }

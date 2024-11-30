@@ -78,6 +78,7 @@ public class menu_top extends Fragment {
         if(getActivity() instanceof TicketSelection) title.setText("ENTRADAS");
         if(getActivity() instanceof ViewDetailsCompra) title.setText("DETALLES");
         if(getActivity() instanceof CompraEntradas) title.setText("COMPRA");
+        if(getActivity() instanceof PagoTarjeta) title.setText("PAGO");
         if(getActivity() instanceof CompraConfirmada) title.setText("CONFIRMACION");
     }
 }

@@ -76,4 +76,5 @@ public class InfoPelicula extends Fragment {
 
     public void setTitle(String title) {this.title_movie = title;}
     public void setImage(int image) {this.image_movie = image;}
+
 }

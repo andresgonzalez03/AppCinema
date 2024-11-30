@@ -8,4 +8,10 @@
     <string name="poster_description">Poster de la película</string>
     <string name="back_button_description">Atrás</string>
     <string name="text_hint">TEXTO DE PRUEBA</string>
+    <string name="register">Datos personales</string>
+    <string name="name_register">Nombre</string>
+    <string name="correo_register">Correo electrónico</string>
+    <string name="tlf_register">Teléfono</string>
+    <string name="boto_register">Registrar</string>
+    <string name="hint_tarjeta">Número de tarjeta (16 dígitos)</string>
 </resources>
