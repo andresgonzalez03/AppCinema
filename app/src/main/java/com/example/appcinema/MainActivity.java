@@ -18,6 +18,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private EditText buscador;
     ImageButton cercar;
+    private ImageButton apagar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         buscador = findViewById(R.id.browser);
         buscador.clearFocus();
         cercar = findViewById(R.id.search);
+        apagar = findViewById(R.id.off_button);
+
         List<Movie> movieList = new ArrayList<>();
         movieList.add(new Movie(
                 "Origen",
@@ -83,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
             String query = buscador.getText().toString().trim();
             adapter.filter(query);
         });
+
+        apagar.setOnClickListener((view) -> {finishAffinity();});
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

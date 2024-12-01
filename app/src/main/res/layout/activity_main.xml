@@ -48,6 +48,13 @@
                 android:contentDescription="@string/search_content" />
 
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/off_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/off_button"/>
     </LinearLayout>
 
     <!-- Peliculas recomendadas por la app -->
