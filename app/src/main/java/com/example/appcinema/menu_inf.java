@@ -116,6 +116,9 @@ public class menu_inf extends Fragment {
 
                     }
                 });
+            } else if (getActivity() instanceof CompraConfirmada) {
+                continueButton.setEnabled(true);
+                continueButton.setOnClickListener(view1 -> navigateToNextActivity());
             }
         }
     }
@@ -184,6 +187,12 @@ public class menu_inf extends Fragment {
             intent.putExtra("title", activity.getMovieTitle());
             intent.putExtra("image", activity.getMovieImage());
             startActivity(intent);
+        } else if (getActivity() instanceof CompraConfirmada) {
+            CompraConfirmada activity = (CompraConfirmada) getActivity();
+            if (activity != null) {
+                Intent intent = new Intent(getActivity(), MainActivity.class);
+                startActivity(intent);
+            }
         }
     }
     public void resetButton() {

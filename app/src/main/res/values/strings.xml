@@ -14,4 +14,5 @@
     <string name="tlf_register">Teléfono</string>
     <string name="boto_register">Registrar</string>
     <string name="hint_tarjeta">Número de tarjeta (16 dígitos)</string>
+    <string name="op_confirmada">Compra correcta</string>
 </resources>
