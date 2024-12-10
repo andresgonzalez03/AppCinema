@@ -14,11 +14,8 @@
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:paddingBottom="16dp"
             android:text="@string/movie_title"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            style="@style/TextTitleDesign" />
 
         <ImageView
             android:id="@+id/poster"

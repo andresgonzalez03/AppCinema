@@ -25,7 +25,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="50dp"
         android:text="Asiento seleccionado: "
-        android:textSize="18sp"
+        style="@style/TextTitleDesign"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/menuTop" />
 
