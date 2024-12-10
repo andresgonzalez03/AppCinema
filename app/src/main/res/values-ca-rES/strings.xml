@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">*AppCinema</string>
+    <string name="bw_hint">Cerca la pel·lícula per nom</string>
+    <string name="menu_content">TODO: menu button</string>
+    <string name="search_content">TODO: search button</string>
+    <string name="inf_fragment_text">Continuar</string>
+    <string name="movie_title">Títol de la pel·lícula</string>
+    <string name="poster_description">Pòster de la pel·lícula</string>
+    <string name="back_button_description">Enrere</string>
+    <string name="text_hint">TEXT DE PROVA</string>
+    <string name="register">Dades personals</string>
+    <string name="name_register">Nom</string>
+    <string name="correo_register">Correu electrònic</string>
+    <string name="tlf_register">Telèfon</string>
+    <string name="boto_register">Registrar</string>
+    <string name="hint_tarjeta">Número de targeta (16 dígits)</string>
+    <string name="op_confirmada">Compra correcta</string>
+</resources>

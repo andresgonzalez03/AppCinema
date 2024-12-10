@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">AppCinema</string>
+    <string name="bw_hint">Search for the movie by name</string>
+    <string name="menu_content">TODO: menu button</string>
+    <string name="search_content">TODO: search button</string>
+    <string name="inf_fragment_text">Continue</string>
+    <string name="movie_title">Movie title</string>
+    <string name="poster_description">Movie poster</string>
+    <string name="back_button_description">Back</string>
+    <string name="text_hint">TEST TEXT</string>
+    <string name="register">Personal information</string>
+    <string name="name_register">Name</string>
+    <string name="correo_register">Email</string>
+    <string name="tlf_register">Phone</string>
+    <string name="boto_register">Register</string>
+    <string name="hint_tarjeta">Card number (16 digits)</string>
+    <string name="op_confirmada">Successful purchase</string>
+</resources>
+
+
